@@ -1,11 +1,11 @@
 1 - Requisitos:
-    -   Funcionais - O que o sistema deve fazer
-    -   Não Funcionais - Qual sistema usar
+    -   Funcionais - O que o sistema deve fazer == Historias
+    -   Não Funcionais - Restrições do sistema 
 
-    - Elicitar - descobrir e entender requisitos do sistema
-    - Casos de Uso - Capturar requisitos funcionais, descrevem como usuarios/sistemas interagem ccom Software.
-    - Prod. Min. Variavel MVP - Teste com a versão minima do produto para teste.
-    - Testes A/B - Usa 2 versões do sistema para testar qual a melhor.
+    - Elicitar - descobrir e entender requisitos do sistema ->
+        - Casos de Uso - Capturar requisitos funcionais, descrevem como usuarios/sistemas interagem com Software. Interação entre Usuario e sistema.
+        - Prod. Min. Variavel MVP - Teste com a versão minima do produto para teste.
+        - Testes A/B - Usa 2 versões do sistema para testar qual a melhor.
 
     - Kanban (Mais simples, p profiss mais maduros) / Scrum Board 
         - Colunas - p/fzr | fznd | feito
@@ -23,7 +23,7 @@
         - Timebox - temporização para eventos.
         - Workshop de criação do backlog(listas de itens/tarefas) - definir e priorizar historias.
         - Backlog Sprint - tarefas que equipe vai realizar no sprint especifico
-        - Criterios e Conclusões - 
+        - Criterios e Conclusões - interna: review do codigo; externa: n funcionais.
         - StoryPoints - 2, 3, 5, 8... unidade de comparação historias. 
         - Planning Poker - Estimar esforço do projeto.
         - BurnDownChart - ideal de esforço VS. atual esforço 
@@ -48,8 +48,11 @@
         O A - ABERTO/FECHADO - Aberto para extensões e fechado para modificações.
         L L - LISKOV - Classe base Mamifero / Classe derivada Vaca substituilas.
         I I - INVERSÃO DE DEPENDÊNCIAS - Modulos de alto nivel n devem depender de modulos de baixo nivel.
-        D D - DEMETER -  Reduzir o acoplamento entre classes Classe deve interagir com o minimo possivel.
-    - Bons Projetos CAIO:
+        I S - SEGREGAÇÃO DE INTERFACES: Nenhum cliente deve ser forçado a depender de métodos que não usa.
+        
+        D D - DEMETER -   objeto deve interagir apenas com objetos que são objetos que estão diretamente relacionados a ele.
+        
+        - Bons Projetos CAIO:
         C - Coesão - Modulos so devem ter 1 função.
         A - Acoplamento - Dependências entre elementos devem ser minimizadas. 
         I - Integridade Conceitual - Coerência nas funcionalidades e na implementação.
@@ -57,4 +60,74 @@
         
     - Lei de Brooks: Novos Devs em um projeto atrasado, só atrasam mais.
 
-4 - Testes de Software/
+4 - Testes de Software - Manuais E Automatizados(foco) & Defeito/Bug GERA Falha
+    - Verificação: Sistema implementado corretamente.
+    - Validação: Sistema atendenecessidades dos usuarios.
+
+    - Modulos - partes menores, Unidades funcionais e componentes de software.
+    - Sketches e Diagramas UML - Ferramentas visuais p/ software.  
+    - Diagrama de Atividades (tipo de UML) - Representam fluxo de trabalho.
+
+    - Metodos Ageis + Piramide(prioridade de testes *)
+        *** - Unidade (ex unix): Testa pequenas unidades de codigo (classes)
+                - FIRST: RAPIDOS, INDEPENDENTES, DETERMINISTICOS, AUTOVERIF, OPORTUNUOS.
+                - MOCKS: Emular objetos reais de forma simplificada para testes unitarios.
+        **  - Integração: Integração entre diferentes modulos. Incluindo banco de dados.
+        *   - Sistema: Testa sistema no geral. Interface externa. 
+                - TDD: testes antes do codigo; foca na escrita de testes antes do código, testes automatizados e refatoração
+                - BDD (baseados do tdd): testes antes do codigo; enfatiza a clareza e a comunicação ao definir testes em uma linguagem comum compreensível por todos os stakeholders,
+                        promove a colaboração entre diferentes stakeholders
+                - Ambos fazem uso de DSL Simples e Criterios de Aceitação:
+                - Ponta-a-Ponta: Sistema inteiro como interface externa (usa-se selenium)
+
+    - Processo de Teste - P.M.A.M.E - Planejamento + Monitoramento + Analise + Modelagem (Projetar casos de teste) + Execução(Realizar)
+    - Tipos de Modelagem:
+        - Caixas:
+            - Branca: Estrutura Interna.
+            - Preta: Estrutura Externa. Baseados em requisitos e casos de uso
+        - Experiência: Exploratorios. Baseados na intuição. Improviso.
+        
+    - Cobertura de teste: cobertura sob codigo, min 60%.
+    - Software Defect Report: Corrigir erros achados.
+        - analisar, reportar, acompanhar, retestar, fechar.
+
+    5 - Manutenção - C.E.P.A + R -> Corretiva, Evolutiva, Preventiva, Adaptativa.
+        - Refactoring - mudar codigo sem alterar funcionamento externo.
+        - Sistema legado - antigo e custoso de melhorar.
+    
+    6 - Gerenciamento de Configurações -> Controle de Versões (ex: git)
+    7 - Gerenciamento de Projetos -> Contratações, RH, Riscos, Concorrência.
+    8 - Modelagem de Software (UML) -> Respresentar de forma visual e estruturada do sistema.
+    9 - Qualidades -> Internas & Externas
+    10 - Pratica Profissional -> Etica ...
+    11 - Economicos -> (ABC) - ACURE, BUSINESS, CASUAL
+
+
+    $$ DEVOPS: devs + equipe de operações
+        - Controle de Versões: GIT E SVN
+            - Podem ser: CENTRALIZADOS(repo c tds versoes)/DISTRIBUIDOS(cada dev c clone)
+            - MonoRepos/MultiRepos
+        - Praticas:
+            - Integração Continua (CI) -> Integrar mudanças do codigo com frequência, p/ detectar problemas precocemente em repo compartilhado.
+            - Entrega Continua / Deploy Continuo (CD) -> Automatiza a entrega de software, sempre pronto p/ liberação, 
+                cada entrega que passa pelos testes automatizados é implementada em produção.
+                ciclos ageis usando o cd conseguem ter implementações imediatas, por exemplo.
+        - Branches: 
+            - Padrões: 
+                - MainLine - Principal/Main
+                - Healthy - Branch com estado de funcionamento adequado/saudável
+                - MainLine Integration - Devs fazem seu trabalho por mainlines e depois as integram (merges)
+                - Feature - Funcionabilidades
+                - Release - Lançamento
+            - Produção:
+                - Environment - Configurações especificas p ambientes (dev, prod, test)
+                - Matury - Branch madura apos lançamento.
+                - Hotfix - Para erros e bugs urgentes.
+            - Lançamento (Release):
+                - Release Train - TREN, releases regulares em intervalos definidos.
+                - Release Ready Mainline - Mainline em estado sempre pronto.
+            - Estrategias GIT:
+                - GITFLOW: Main e Develop (Apoio: RFH), com features, releases e hotfix de suporte
+                - GITHUBFLOW: Main, Features e Pull Requests.
+                - TBD TRUNKBASEDDEV: Usam feature toggles (p/ desabilitar funcionalidades incompletas), todas mudanças na main.
+                    direto na main (evitar conflito de merge)
