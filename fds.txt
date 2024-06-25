@@ -1,0 +1,60 @@
+1 - Requisitos:
+    -   Funcionais - O que o sistema deve fazer
+    -   Não Funcionais - Qual sistema usar
+
+    - Elicitar - descobrir e entender requisitos do sistema
+    - Casos de Uso - Capturar requisitos funcionais, descrevem como usuarios/sistemas interagem ccom Software.
+    - Prod. Min. Variavel MVP - Teste com a versão minima do produto para teste.
+    - Testes A/B - Usa 2 versões do sistema para testar qual a melhor.
+
+    - Kanban (Mais simples, p profiss mais maduros) / Scrum Board 
+        - Colunas - p/fzr | fznd | feito
+        - Cartões - tarefas e itens de trabalho
+        - WIP - trabalho em progresso, restrições ao numero de tarefas.
+    - Metodos Ageis:
+        - Extreme Programming(XP): escalavel, trabalho em iterações, melhorias constantes, Escopo Aberto(pagamento pelas horas de trabalho)
+        - Scrum: reuniões iniciais e diárias 
+            - PO: entre devs e stakeholders, gerencia historias.
+            - Sprint: usa-se o backlog de prod p resolvelos. 
+            - BackLog de Prod ^^: Listas de tarefas em ordem de prioridade.
+            - Review: Time mostra trab p stakeholders p aprovação.
+            - Retrospectiva: Oq deu certo e oq melhorar.
+
+        - Timebox - temporização para eventos.
+        - Workshop de criação do backlog(listas de itens/tarefas) - definir e priorizar historias.
+        - Backlog Sprint - tarefas que equipe vai realizar no sprint especifico
+        - Criterios e Conclusões - 
+        - StoryPoints - 2, 3, 5, 8... unidade de comparação historias. 
+        - Planning Poker - Estimar esforço do projeto.
+        - BurnDownChart - ideal de esforço VS. atual esforço 
+
+    - Lofi - Prototipo de Baixa
+    - StoryBoards(Narram historia especifica) p/ mostrar como Sketches(desenhos) funcionam na interação c usuario.
+
+2 - Processo de Software:
+    - WaterFall (Cascata) - Fases sequênciais, Processo fluido, sequêncial.
+    - Ágil - Muita Flexibilidade, Colaboração e FeedBack continuo, Entregas frequêntes e Iterações curtas, rápida adaptação a mudanças.
+    - Alternativos: 
+        - Espiral - Modelo Cascata, iterativo e Incremental, Bom p proj grandes, avaliação em ciclos repetitivos. 
+        - RUP - Processo Unificado Racional - Ciclo Curtos (Iterações), Avaliação de riscos (foco na qualidade), Usam casos de uso.
+
+3 - Projeto de Software: - Foward & Reverse =/=
+    - UML - Documentar artefatos do software, usada p criar diagramas q ajudam a descrever e modelar sistemas complexos.
+        - Estático - modelam estrutura do codigo.
+        - Dinâmico - modelam execução e comportamento do sistema.
+
+    - Principios de Projeto - SOLID:  fazer o código mais compreensível, flexível e fácil de manter.
+        S R - RESPONSABILIDADE UNICA - Cada classe com unica responsabilidade.
+        O A - ABERTO/FECHADO - Aberto para extensões e fechado para modificações.
+        L L - LISKOV - Classe base Mamifero / Classe derivada Vaca substituilas.
+        I I - INVERSÃO DE DEPENDÊNCIAS - Modulos de alto nivel n devem depender de modulos de baixo nivel.
+        D D - DEMETER -  Reduzir o acoplamento entre classes Classe deve interagir com o minimo possivel.
+    - Bons Projetos CAIO:
+        C - Coesão - Modulos so devem ter 1 função.
+        A - Acoplamento - Dependências entre elementos devem ser minimizadas. 
+        I - Integridade Conceitual - Coerência nas funcionalidades e na implementação.
+        O - Ocultamento de Informações - Detalhes sujeitos a mudanças.
+        
+    - Lei de Brooks: Novos Devs em um projeto atrasado, só atrasam mais.
+
+4 - Testes de Software/
