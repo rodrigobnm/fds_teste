@@ -1,19 +1,38 @@
 1 - Requisitos:
-    -   Funcionais - O que o sistema deve fazer == Historias
-    -   Não Funcionais - Restrições do sistema 
+    -   Funcionais - O que o sistema deve fazer == Historias (ex: abrir e fechar contas)
+    -   Não Funcionais - Restrições do sistema  (ex: segurança, desempenho)
 
     - Elicitar - descobrir e entender requisitos do sistema ->
         - Casos de Uso - Capturar requisitos funcionais, descrevem como usuarios/sistemas interagem com Software. Interação entre Usuario e sistema.
         - Prod. Min. Variavel MVP - Teste com a versão minima do produto para teste.
         - Testes A/B - Usa 2 versões do sistema para testar qual a melhor.
+    
+    2 - Processo de Software:
+    - WaterFall (Cascata) - Fases sequênciais, Processo fluido, sequêncial. Por desenvolvimenteo de software ser muito abstrato e mutavel n deu certo.
+    - Ágil - Muita Flexibilidade, Colaboração e FeedBack continuo, Entregas frequêntes e Iterações curtas, rápida adaptação a mudanças.
+    - Alternativos: 
+        - Espiral - Modelo Cascata, iterativo e Incremental, Bom p proj grandes, avaliação em ciclos repetitivos. 
+        - RUP - Processo Unificado Racional - Ciclo Curtos (Iterações), Avaliação de riscos (foco na qualidade), Usam casos de uso.
+            Fases: Viabilidade (Inception) + requisitos + arquitetura(Elaboração) + Proj de bxo nivel + implementação (Construção) + Transição (Deploym)
+            Doc mt detalhada, verbosa e pco util, n funcionou com o software.
 
-    - Kanban (Mais simples, p profiss mais maduros) / Scrum Board 
+    # METODOS COMO SCRUM, XP E KANBAN SE TORNARAM MAIS UTEIS (METODOS AGEIS), POIS SAO MIAS FLEX
+
+    - Metodos Ageis (#):
+
+        ? QUANDO Ñ USAR ? mercado estáveis, projetos com requisitos claros e estáveis desde o início, ou quando os clientes não estão disponíveis para colaboração frequente. ?
+
+        # - Kanban (Mais simples, p profiss mais maduros) / Scrum Board 
         - Colunas - p/fzr | fznd | feito
         - Cartões - tarefas e itens de trabalho
         - WIP - trabalho em progresso, restrições ao numero de tarefas.
-    - Metodos Ageis:
-        - Extreme Programming(XP): escalavel, trabalho em iterações, melhorias constantes, Escopo Aberto(pagamento pelas horas de trabalho)
-        - Scrum: reuniões iniciais e diárias 
+
+        # - Extreme Programming (XP):  pair programming, testes automatizados e refactoring 
+            escalavel, trabalho em iterações, melhorias constantes, Escopo Aberto(pagamento pelas horas de trabalho)
+        
+        # - Scrum:  Scrum é uma estrutura bem definida com papéis específicos (Product Owner, Scrum Master, Time) e eventos (Sprints, Revisão, Retrospectiva).
+        reuniões iniciais e diárias 
+            - BOA HISTORIA = INVEST
             - PO: entre devs e stakeholders, gerencia historias.
             - Sprint: usa-se o backlog de prod p resolvelos. 
             - BackLog de Prod ^^: Listas de tarefas em ordem de prioridade.
@@ -28,20 +47,16 @@
         - Planning Poker - Estimar esforço do projeto.
         - BurnDownChart - ideal de esforço VS. atual esforço 
 
+
     - Lofi - Prototipo de Baixa
     - StoryBoards(Narram historia especifica) p/ mostrar como Sketches(desenhos) funcionam na interação c usuario.
 
-2 - Processo de Software:
-    - WaterFall (Cascata) - Fases sequênciais, Processo fluido, sequêncial.
-    - Ágil - Muita Flexibilidade, Colaboração e FeedBack continuo, Entregas frequêntes e Iterações curtas, rápida adaptação a mudanças.
-    - Alternativos: 
-        - Espiral - Modelo Cascata, iterativo e Incremental, Bom p proj grandes, avaliação em ciclos repetitivos. 
-        - RUP - Processo Unificado Racional - Ciclo Curtos (Iterações), Avaliação de riscos (foco na qualidade), Usam casos de uso.
-
 3 - Projeto de Software: - Foward & Reverse =/=
-    - UML - Documentar artefatos do software, usada p criar diagramas q ajudam a descrever e modelar sistemas complexos.
-        - Estático - modelam estrutura do codigo.
-        - Dinâmico - modelam execução e comportamento do sistema.
+    % MODELOS DE SOFTWARE -> PREENCHER LACUNA ENTRE REQUISITOS E CODIGO
+      % - UML - Detalha a finalidade dos diagramas de atividades, que são usados para descrever a lógica de processos de negócios,
+            - Documentar artefatos do software, usada p criar diagramas q ajudam a descrever e modelar sistemas complexos.
+            - Estático - modelam estrutura do codigo.
+            - Dinâmico - modelam execução e comportamento do sistema.
 
     - Principios de Projeto - SOLID:  fazer o código mais compreensível, flexível e fácil de manter.
         S R - RESPONSABILIDADE UNICA - Cada classe com unica responsabilidade.
@@ -50,17 +65,21 @@
         I I - INVERSÃO DE DEPENDÊNCIAS - Modulos de alto nivel n devem depender de modulos de baixo nivel.
         I S - SEGREGAÇÃO DE INTERFACES: Nenhum cliente deve ser forçado a depender de métodos que não usa.
         
-        D D - DEMETER -   objeto deve interagir apenas com objetos que são objetos que estão diretamente relacionados a ele.
-        
-        - Bons Projetos CAIO:
+        Principio DEMETER -   objeto deve interagir apenas com objetos que são objetos que estão diretamente relacionados a ele.
+            Reduz demendencia entre partes do sistema! 
+
+        - Bons Projetos Design CAIO:
         C - Coesão - Modulos so devem ter 1 função.
-        A - Acoplamento - Dependências entre elementos devem ser minimizadas. 
+        A - minimizar Acoplamento - Dependências entre elementos devem ser minimizadas. 
         I - Integridade Conceitual - Coerência nas funcionalidades e na implementação.
         O - Ocultamento de Informações - Detalhes sujeitos a mudanças.
         
+    - Tentar Maximizar coesao e minimizar acoplamento
     - Lei de Brooks: Novos Devs em um projeto atrasado, só atrasam mais.
 
 4 - Testes de Software - Manuais E Automatizados(foco) & Defeito/Bug GERA Falha
+    "Testes de software podem revelar a presença de bugs, mas não garantem a ausência de todos os erros. (Edsger W. Dijkstra)"
+
     - Verificação: Sistema implementado corretamente.
     - Validação: Sistema atendenecessidades dos usuarios.
 
@@ -74,11 +93,14 @@
                 - MOCKS: Emular objetos reais de forma simplificada para testes unitarios.
         **  - Integração: Integração entre diferentes modulos. Incluindo banco de dados.
         *   - Sistema: Testa sistema no geral. Interface externa. 
-                - TDD: testes antes do codigo; foca na escrita de testes antes do código, testes automatizados e refatoração
+                - TDD: foco em comportamento ;testes antes do codigo; foca na escrita de testes antes do código, testes automatizados e refatoração
                 - BDD (baseados do tdd): testes antes do codigo; enfatiza a clareza e a comunicação ao definir testes em uma linguagem comum compreensível por todos os stakeholders,
                         promove a colaboração entre diferentes stakeholders
-                - Ambos fazem uso de DSL Simples e Criterios de Aceitação:
+                - Ambos fazem uso de DSL Simples e Criterios de Aceitação
                 - Ponta-a-Ponta: Sistema inteiro como interface externa (usa-se selenium)
+            ! DSL Simples: 
+                    Converter linguagem natural estruturada em testes executáveis.
+
 
     - Processo de Teste - P.M.A.M.E - Planejamento + Monitoramento + Analise + Modelagem (Projetar casos de teste) + Execução(Realizar)
     - Tipos de Modelagem:
@@ -86,21 +108,25 @@
             - Branca: Estrutura Interna.
             - Preta: Estrutura Externa. Baseados em requisitos e casos de uso
         - Experiência: Exploratorios. Baseados na intuição. Improviso.
-        
+    
+    - Outros Tipos de Testes: Aceitação (manual), Alfa e beta (manual), Requisitos não-funcionais
     - Cobertura de teste: cobertura sob codigo, min 60%.
-    - Software Defect Report: Corrigir erros achados.
-        - analisar, reportar, acompanhar, retestar, fechar.
+    - Software Defect Report: Corrigir erros achados. ARARF
+        - analisar, reportar, acompanhar, retestar, fechar. 
 
-    5 - Manutenção - C.E.P.A + R -> Corretiva, Evolutiva, Preventiva, Adaptativa.
+    5 - Manutenção - C.E.P.A + R -> Corretiva, Evolutiva, Preventiva, Adaptativa. garantindo a eficácia contínua do software ao longo do tempo.
         - Refactoring - mudar codigo sem alterar funcionamento externo.
         - Sistema legado - antigo e custoso de melhorar.
     
-    6 - Gerenciamento de Configurações -> Controle de Versões (ex: git)
+    6 - Gerenciamento de Configurações -> Controle de Versões (ex: git) Controla as versões do código-fonte e facilita a recuperação de versões antigas, garantindo integridade e rastreabilidade.
     7 - Gerenciamento de Projetos -> Contratações, RH, Riscos, Concorrência.
-    8 - Modelagem de Software (UML) -> Respresentar de forma visual e estruturada do sistema.
-    9 - Qualidades -> Internas & Externas
-    10 - Pratica Profissional -> Etica ...
-    11 - Economicos -> (ABC) - ACURE, BUSINESS, CASUAL
+    8 - Processos de Desenvolvimento de Software: 
+        Define as atividades para a construção do sistema, incluindo modelos como Waterfall, Espiral e Ágil, cada um com abordagens diferentes.
+    9 - Modelagem de Software (UML) -> Respresentar de forma visual e estruturada do sistema.
+    10 - Qualidades -> Internas & Externas; Considera atributos internos e externos que determinam a qualidade do software, como correção, robustez e modularidade.
+    11 - Pratica Profissional -> Engloba aspectos éticos, certificações, regulamentação e educação na área de engenharia de software.
+    12 - Economicos -> Incluem retorno de investimento, monetização do software e escolha adequada de licenças, considerando questões financeiras e comerciais.
+    TIPOS (ABC) - ACURE, BUSINESS, CASUAL
 
 
     $$ DEVOPS: devs + equipe de operações
@@ -108,7 +134,7 @@
             - Podem ser: CENTRALIZADOS(repo c tds versoes)/DISTRIBUIDOS(cada dev c clone)
             - MonoRepos/MultiRepos
         - Praticas:
-            - Integração Continua (CI) -> Integrar mudanças do codigo com frequência, p/ detectar problemas precocemente em repo compartilhado.
+            - Integração Continua (CI) -> Integrar mudanças do codigo com frequência (POR DIA), p/ detectar problemas precocemente em repo compartilhado.
             - Entrega Continua / Deploy Continuo (CD) -> Automatiza a entrega de software, sempre pronto p/ liberação, 
                 cada entrega que passa pelos testes automatizados é implementada em produção.
                 ciclos ageis usando o cd conseguem ter implementações imediatas, por exemplo.
@@ -131,3 +157,86 @@
                 - GITHUBFLOW: Main, Features e Pull Requests.
                 - TBD TRUNKBASEDDEV: Usam feature toggles (p/ desabilitar funcionalidades incompletas), todas mudanças na main.
                     direto na main (evitar conflito de merge)
+                
+
+                Resumo da Palestra de Microsserviços: 
+                Aqui está um resumo da palestra "Microservices" de Martin Fowler na GOTO 2014 em tópicos:
+                
+                Definição de Microservices:
+                Arquitetura composta por serviços pequenos e independentes.
+                Cada serviço executa um processo único e se comunica via APIs.
+                
+                Comparação com Arquiteturas Monolíticas:
+                Monólitos são sistemas únicos e integrados.
+                Microservices oferecem melhor escalabilidade e manutenção.
+                
+                Benefícios dos Microservices:
+                Escalabilidade: Serviços podem ser escalados individualmente.
+                Flexibilidade de desenvolvimento: Equipes independentes podem trabalhar em serviços diferentes.
+                
+                Desafios dos Microservices:
+                Comunicação entre serviços: Necessidade de gerenciar a comunicação e a latência.
+                Gerenciamento de dados: Distribuição de dados entre diferentes serviços.
+                
+                Melhores Práticas:
+                Implementação de DevOps: Integração contínua e entrega contínua (CI/CD).
+                Monitoramento e Log: Necessidade de monitorar e registrar serviços individuais.
+                
+                Exemplos e Casos de Uso:
+                Discussão de empresas que adotaram microservices com sucesso.
+                
+                 Conclusão:
+                Microservices são uma solução poderosa para sistemas complexos, mas requerem uma abordagem disciplinada para gestão e implementação.
+                https://www.youtube.com/watch?v=wgdBVIX9ifA
+        
+    && ARQUITETURA DE SOFTWARE - Tomada de decisões
+        - JUNÇÃO DE (**):
+            ** ESTRUTURA DO SISTEMA - modulos, camadas...
+            ** CARACTERISTICAS ARQUITETURAIS - Req n funcionais (sist. deve se comportar em qualidade e performance)
+            ** DECISOES ARQUITETURAIS - Escolha da tecnologia, Padrões Arquiteturais,  Gestão de Configurações, Estilo Arquitetural (Monolíticos, Distribuidos etc)
+            ** PRINCIPIOS DE PROJETO !!!
+                - Ocultamento, Alta coesao, baixo acoplamento, separação de preocupações. SOLID, CAIO ETC
+        - Linus Tanenbaum  - c/ comentario de ken thompson unix
+
+        && PADRÕES ARQUITETURAIS - aplicados no inicio, alto nivel!
+            já os Padrões de projeto são p nivel medio e beixo (frameworks) e Idiomas (linguagens) p nivel baixo 
+            && Voltando A PADRÕES ARQUITETURAIS
+                & CAMADAS
+                    Cliente - Logica - Banco de Dados (3 Camadas)
+                    Cliente (Interface e Logica(ocorrendo no Cliente)) - Banco de Dados (2 Camadas) 
+                    Clientes - Varias Camadas (Businessm lógica, microservices, apresentação etc) - BD (Multicamadas)
+                
+                & MVC - MODEL VIEW CONTROLER - pensado para aplicações monoliticas(desktop)
+                    Model + (View + Controladores) -> (interface gráfica)
+                    hoje em dia o MVC WEB - usado para sistemas distribuidos (ex de framework - Django)
+                & SPA's - Single Page Application - Lembra MVC web
+                    implementadas em js, menos burras, conseguem fazer mais de uma requisição http, armazena seus dados.
+                
+                & MICROSSERVIÇOS
+                    MONOLITOS - Sistema é unico processo em tempo de execução (blocão)
+                    - Sempre necessario escalalo inteiramente (release mais lento, centralizado, modulos mudados podem afetar modulos funcionantes)
+                    - exigindo datas pre-definida para releases
+                    MICROSSERVIÇOS - Modulos viram processos independentes.
+                        - + Escalavel + Autonomia do time, pode-se usar tecnologias diferentes, pode tirar apenas o sist falho do ar...
+                        - Indicado que cada microsserviço tenha seu dado, diminuindo acoplamento.
+                    Indicado começar com monolitos e depois migrar para microsserviços gradativamente.
+                        Arq do microsservico é mais complexa exige melhor latência
+                
+                & ORIENTADO A MENSAGENS
+                    Cliente -- Broker (de mensagens) -- Servidor
+                    - Broker - Servidor robusto e confiavel que realiza uma fila de mensagens.
+                    - Ficando facil adicionar novos servidores e jao havendo mais servidor fora do ar.
+                    - Bxo acoplamento entre cliente e servidor, comunicação assincrona.
+                
+                & PUBLISH / SUBSCRIBE - publisher 100% desacoplados dos subscribes
+                    - muito escalavel (podendo haver varios publish e subscribes)
+                    - Assíncronas - produtores não precisam esperar pela confirmação imediata da entrega do evento pelos consumidores.
+                
+
+                && OUTROS:
+                    && PIPES E FILTROS - unix utiliza, programas (filtros) se comunicam por pipes (buffers)
+                    && CLIENTE - SERVIDOR - um servidor e varios clientes ligados a ele
+                    && PEER TO PEER  - todo nó pode ser cliente e/ou servidor
+
+                &&& ANTIPADRÕES 
+                    &&& BIG BALL OF MUD - BAGUNÇA 
